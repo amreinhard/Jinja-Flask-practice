@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+{% extends 'base.html' %}
+  <title>{% block title %}2 The Libs of Madness{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+
+    {% for word in listy %}
+
+    {{ word }}
+
+    {% endfor %}
+
+    There once was a {{ color }} {{ cat }} sitting at home, making fun of {{ dog }}. When {{ thrones }} went to pick it up, it burst into flames in a totally {{ adjective }} way. {{ person }} laughed their {{ noun }} off.
+
+    {% endblock %}
+
+    {% block footer %}
+    <img src="http://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2016/02/the-matrix-reloaded.jpg?itok=cYDrtNqN">
+    {% endblock %}
+
+</body>
+</html>

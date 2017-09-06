@@ -1,6 +1,6 @@
 """A madlib game that compliments its users."""
 
-from random import choice
+from random import choice, sample
 
 from flask import Flask, render_template, request
 
@@ -50,6 +50,10 @@ def goodbye():
 @app.route('/madlib')
 def show_madlib():
     """Returns completed madlib to user."""
+
+    picked = choice(["madlib.html", "madlib1.html", "madlib2.html", "madlib3.html"])
+    listy = ['person', 'color', 'noun', 'adjective', 'cat', 'dog', 'thrones']
+
     person = request.args.get('person')
     color = request.args.get('color')
     noun = request.args.get('noun')
@@ -58,19 +62,19 @@ def show_madlib():
     cat = request.args.get('cat')
     dog = request.args.get('dog')
 
-    return render_template("madlib.html", person=person, color=color,
-    noun=noun, adjective=adjective, cat=cat, dog=dog, thrones=thrones)
+    return render_template(picked, person=person, color=color,
+    noun=noun, adjective=adjective, cat=cat, dog=dog, thrones=thrones, listy=listy)
 
 @app.route('/greet')
 def greet_person():
     """Greet user with compliment."""
 
-    player = request.args.get("person")
+    person = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
-                           person=player,
+                           person=person,
                            compliment=compliment)
 
 

@@ -6,6 +6,14 @@
 </head>
 <body>
     {% block content %}
+
+    {{ person }}, you are so:
+
+    {% for comp in compliment %}
+        <li>{{ comp }}</li>
+    {% endfor %}
+
+
     <form action="/game">
         Would you like to play a game? >:D <select type="dropdown" name="yes-no">
         <option value="yes">Yes</option>

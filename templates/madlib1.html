@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+{% extends 'base.html' %}
+  <title>{% block title %}1 The Libs of Madness{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    There once was a {{ color }} {{ cat }} sitting at home, making fun of {{dog }}.
+When {{ thrones }} went to pick it up, it burst into flames in a totally
+{{ adjective }} way. {{ person }} laughed their {{ noun }} off.
+    {% endblock %}
+
+    {% block footer %}
+    <img src="http://assets.nydailynews.com/polopoly_fs/1.2977273.1487606011!/img/httpImage/image.jpg_gen/derivatives/article_750/vue-downloads.jpg">
+    {% endblock %}
+
+</body>
+</html>
