@@ -1,9 +1,17 @@
 <!doctype html>
 <html>
 <head>
-  <title>A Compliment</title>
+    {% extends 'base.html' %}
+  <title>{% block title %}A Compliment{% endblock %}</title>
 </head>
 <body>
-    Hi {{ person }}! I think you're {{ compliment }}!
+    {% block content %}
+    <form action="/game">
+        Would you like to play a game? >:D <select type="dropdown" name="yes-no">
+        <option value="yes">Yes</option>
+        <option value="no">No</option></select><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% endblock %}
 </body>
 </html>

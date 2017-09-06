@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    {% extends 'base.html' %}
+  <title>{% block title %}Game page 2: Electric Boogaloo{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <form action="/madlib">
+        Person: <input type="text" name="person"><br>
+        Color: <input type="text" name="color"><br>
+        Noun: <input type="text" name="noun"><br>
+        Adjective: <input type="text" name="adjective"><br>
+        Cat: <input type="text" name="cat"><br>
+        Dog: <input type="text" name="dog"><br>
+        Game of Thrones character: <input type="text" name="thrones">
+      <input type="submit">
+    </form>
+    {% endblock %}
+</body>
+</html>

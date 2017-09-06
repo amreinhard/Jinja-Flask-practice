@@ -29,6 +29,38 @@ def say_hello():
     return render_template("hello.html")
 
 
+@app.route('/game')
+def show_madlib_form():
+    """Shows madlib form to user."""
+
+    answer = request.args.get("yes-no")
+
+    if answer == "no":
+        return render_template("goodbye.html")
+    else:
+        return render_template("game.html")
+
+
+@app.route('/goodbye')
+def goodbye():
+    """Shows madlib form to user."""
+
+    return render_template("goodbye.html")
+
+@app.route('/madlib')
+def show_madlib():
+    """Returns completed madlib to user."""
+    person = request.args.get('person')
+    color = request.args.get('color')
+    noun = request.args.get('noun')
+    adjective = request.args.get('adjective')
+    thrones = request.args.get('thrones')
+    cat = request.args.get('cat')
+    dog = request.args.get('dog')
+
+    return render_template("madlib.html", person=person, color=color,
+    noun=noun, adjective=adjective, cat=cat, dog=dog, thrones=thrones)
+
 @app.route('/greet')
 def greet_person():
     """Greet user with compliment."""
